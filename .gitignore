@@ -2,3 +2,10 @@
 *.run
 *.out
 *.dSYM/
+*.so
+*.expected
+os_lab2/*/bin/mem_shell
+os_lab2/*/bin/mem_shell_sim
+os_lab2/*/mem_alloc_test
+*.tar.gz
+!os_lab2/*/lib/*.so
