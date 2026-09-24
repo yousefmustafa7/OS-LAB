@@ -161,7 +161,8 @@ void *memory_alloc(size_t size)
     int i;
     void *alloc_addr = NULL;
     debug_printf("enter size = %lu\n", size);
-    i = find_pool_from_block_size(size);
+    /* A request of 0 bytes must still return a valid block: serve it from pool 0 */
+    i = find_pool_from_block_size(size == 0 ? 1 : size);
     switch (mem_pools[i].pool_type)
     {
     case FAST_POOL:
